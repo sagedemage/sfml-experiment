@@ -32,8 +32,10 @@ int main()
     sf::RectangleShape player(sf::Vector2f(25, 25)); // radius
     sf::RectangleShape background(sf::Vector2f(500, 500));
     window.setFramerateLimit(60);
-    player.setFillColor(sf::Color::Green);
-    background.setFillColor(sf::Color::Blue);
+    sf::Color custom_background_color = sf::Color(84, 193, 255, 255);
+    sf::Color custom_player_color = sf::Color(91, 31, 255, 255);
+    player.setFillColor(custom_player_color);
+    background.setFillColor(custom_background_color);
 
     const float speed = 2.f;
 
