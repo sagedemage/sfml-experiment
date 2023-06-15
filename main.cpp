@@ -1,6 +1,31 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
+sf::Vector2f player_boundary(sf::Vector2f circle_position)
+{
+    if (circle_position.x + 50.f >= 500.f)
+    {
+        /* Right boundary */
+        circle_position.x = float(500 - 50);
+    }
+    else if (circle_position.x <= 0.f)
+    {
+        /* Left  boundary */
+        circle_position.x = 0.f;
+    }
+    if (circle_position.y <= 0.f)
+    {
+        /* Top boudnary */
+        circle_position.y = 0.f;
+    }
+    else if (circle_position.y + 50.f >= 500)
+    {
+        /* Bottom boudnary */
+        circle_position.y = float(500 - 50);
+    }
+    return circle_position;
+}
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(500, 500), "2D Game!");
@@ -18,11 +43,14 @@ int main()
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed) {
+            if (event.type == sf::Event::Closed)
+            {
                 window.close();
             }
-            if (event.type == sf::Event::KeyPressed) {
-                if (event.key.code == sf::Keyboard::Escape) {
+            if (event.type == sf::Event::KeyPressed)
+            {
+                if (event.key.code == sf::Keyboard::Escape)
+                {
                     window.close();
                 }
             }
@@ -56,27 +84,16 @@ int main()
         // Boundary
         sf::Vector2f circle_position = circle.getPosition();
 
-        if (circle_position.x+50 >= 500) {
-            /* Right boundary */
-            circle.setPosition(500-50, circle_position.y);
-        }
-        if (circle_position.x <= 0) {
-            /* Left  boundary */
-            circle.setPosition(0, circle_position.y);
-        }
-        if (circle_position.y+50 >= 500) {
-            /* Bottom boudnary */
-            circle.setPosition(circle_position.x, 500-50);
-        }
-        if (circle_position.y <= 0) {
-            /* Bottom boudnary */
-            circle.setPosition(circle_position.x, 0);
-        }
+        circle_position = player_boundary(circle_position);
 
+        circle.setPosition(circle_position);
+
+        /*
         std::cout << "X" << std::endl;
         std::cout << circle_position.x << std::endl;
         std::cout << "Y" << std::endl;
         std::cout << circle_position.y << std::endl;
+        */
 
         window.clear();
         window.draw(background);
