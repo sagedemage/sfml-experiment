@@ -81,9 +81,9 @@ int main()
             circle.move(0.f, speed);
         }
 
-        // Boundary
         sf::Vector2f circle_position = circle.getPosition();
 
+        // Player Boundary
         circle_position = player_boundary(circle_position);
 
         circle.setPosition(circle_position);
