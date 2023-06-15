@@ -1,29 +1,29 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-sf::Vector2f player_boundary(sf::Vector2f circle_position)
+sf::Vector2f player_boundary(sf::Vector2f position)
 {
-    if (circle_position.x + 50.f >= 500.f)
+    if (position.x + 50.f >= 500.f)
     {
         /* Right boundary */
-        circle_position.x = float(500 - 50);
+        position.x = float(500 - 50);
     }
-    else if (circle_position.x <= 0.f)
+    else if (position.x <= 0.f)
     {
         /* Left  boundary */
-        circle_position.x = 0.f;
+        position.x = 0.f;
     }
-    if (circle_position.y <= 0.f)
+    if (position.y <= 0.f)
     {
         /* Top boudnary */
-        circle_position.y = 0.f;
+        position.y = 0.f;
     }
-    else if (circle_position.y + 50.f >= 500)
+    else if (position.y + 50.f >= 500)
     {
         /* Bottom boudnary */
-        circle_position.y = float(500 - 50);
+        position.y = float(500 - 50);
     }
-    return circle_position;
+    return position;
 }
 
 int main()
