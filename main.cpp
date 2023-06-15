@@ -30,8 +30,7 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(500, 500), "2D Game!");
     sf::CircleShape circle(25.f); // radius
-    sf::Vector2f size = sf::Vector2f(500, 500);
-    sf::RectangleShape background(size);
+    sf::RectangleShape background(sf::Vector2f(500, 500));
     window.setFramerateLimit(60);
     circle.setFillColor(sf::Color::Green);
     background.setFillColor(sf::Color::Blue);
