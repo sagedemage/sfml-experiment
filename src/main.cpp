@@ -38,6 +38,14 @@ int main()
 
     const float speed = 2.f;
 
+    sf::Music music;
+    if (!music.openFromFile("assets/music/empty.ogg")) {
+        return -1;
+    }
+    
+    music.setLoop(true);
+    music.play();
+
     while (window.isOpen())
     {
         sf::Event event;

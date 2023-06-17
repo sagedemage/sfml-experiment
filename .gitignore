@@ -1,2 +1,5 @@
 build/
 .vscode/
+*.aup3
+*.mscz
+.mscbackup/

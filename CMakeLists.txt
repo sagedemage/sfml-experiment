@@ -15,12 +15,12 @@ set(STANDARD_C_VERSION_FLAG "-std=c11")
 set(OPTIMIZE_FLAG "-O3")
 set(WARNING_FLAGS "-Werror -Wpedantic -Wall -Wextra -Wno-unknown-pragmas")
 
-# file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
+file(COPY assets DESTINATION ${CMAKE_BINARY_DIR})
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${STANDARD_C_VERSION_FLAG} ${OPTIMIZE_FLAG} ${WARNING_FLAGS}")
 
 add_executable(2DGame ${SOURCE_FILES})
 
-target_link_libraries(2DGame -lsfml-graphics -lsfml-window -lsfml-system)
+target_link_libraries(2DGame -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -logg -lvorbis -lvorbisenc -lvorbisfile)
 
 target_precompile_headers(2DGame PRIVATE ${HEADER_FILES})
