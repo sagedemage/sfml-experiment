@@ -1,4 +1,3 @@
-#include <SFML/Graphics.hpp>
 #include <iostream>
 
 sf::Vector2f player_boundary(sf::Vector2f position)
