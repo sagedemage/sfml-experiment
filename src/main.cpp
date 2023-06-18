@@ -30,9 +30,12 @@ sf::Vector2f player_boundary(sf::Vector2f position)
 
 int main()
 {
+    // window
     sf::RenderWindow window(sf::VideoMode(LEVEL_WIDTH, LEVEL_HEIGHT), "2D Game");
-    sf::RectangleShape player(sf::Vector2f(25, 25));
     window.setFramerateLimit(60);
+
+    // player
+    sf::RectangleShape player(sf::Vector2f(25, 25));
     player.setFillColor(sf::Color(91, 31, 255, 255));
 
     const float speed = 2.f;
