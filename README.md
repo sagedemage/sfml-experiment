@@ -13,3 +13,15 @@ Headers files that can be included in SFML
 #include <SFML/Window.hpp>
 #include <SFML/Network.hpp>
 ```
+
+Linker options
+```
+-lsfml-graphics
+-lsfml-window 
+-lsfml-system 
+-lsfml-audio 
+-logg 
+-lvorbis 
+-lvorbisenc 
+-lvorbisfile
+```

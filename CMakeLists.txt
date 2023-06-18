@@ -21,6 +21,6 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${STANDARD_C_VERSION_FLAG} ${OPTIMIZE_FLAG} 
 
 add_executable(2DGame ${SOURCE_FILES})
 
-target_link_libraries(2DGame -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -logg -lvorbis -lvorbisenc -lvorbisfile)
+target_link_libraries(2DGame -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio)
 
 target_precompile_headers(2DGame PRIVATE ${HEADER_FILES})
