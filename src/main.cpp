@@ -1,4 +1,7 @@
-#include <iostream>
+//#include <iostream>
+
+#define LEVEL_WIDTH 750
+#define LEVEL_HEIGHT 500
 
 sf::Vector2f player_boundary(sf::Vector2f position)
 {
@@ -27,14 +30,10 @@ sf::Vector2f player_boundary(sf::Vector2f position)
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(500, 500), "2D Game!");
-    sf::RectangleShape player(sf::Vector2f(25, 25)); // radius
-    sf::RectangleShape background(sf::Vector2f(500, 500));
+    sf::RenderWindow window(sf::VideoMode(LEVEL_WIDTH, LEVEL_HEIGHT), "2D Game");
+    sf::RectangleShape player(sf::Vector2f(25, 25));
     window.setFramerateLimit(60);
-    sf::Color custom_background_color = sf::Color(84, 193, 255, 255);
-    sf::Color custom_player_color = sf::Color(91, 31, 255, 255);
-    player.setFillColor(custom_player_color);
-    background.setFillColor(custom_background_color);
+    player.setFillColor(sf::Color(91, 31, 255, 255));
 
     const float speed = 2.f;
 
@@ -93,15 +92,8 @@ int main()
         sf::Vector2f player_position = player_boundary(player.getPosition());
         player.setPosition(player_position);
 
-        /*
-        std::cout << "X" << std::endl;
-        std::cout << circle_position.x << std::endl;
-        std::cout << "Y" << std::endl;
-        std::cout << circle_position.y << std::endl;
-        */
-
-        window.clear();
-        window.draw(background);
+        // set background color of the window
+        window.clear(sf::Color(84, 193, 255, 255));
         window.draw(player);
         window.display();
     }
