@@ -44,6 +44,9 @@ int main()
     if (!music.openFromFile("assets/music/empty.ogg")) {
         return -1;
     }
+
+    const int volume = 50;
+    music.setVolume(volume);
     
     music.setLoop(true);
     music.play();
