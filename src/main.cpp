@@ -51,9 +51,11 @@ int main()
     music.setLoop(true);
     music.play();
 
+    #pragma unroll
     while (window.isOpen())
     {
         sf::Event event;
+        #pragma unroll
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
