@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22 VERSION 0.1.0)
 
 project(2DGame)
 
-set(HEADER_FILES src/pch/sfml-pch.h)
+set(HEADER_FILES src/pch/sfml-pch.hpp)
 
 set(SOURCE_FILES 
     src/main.cpp 
